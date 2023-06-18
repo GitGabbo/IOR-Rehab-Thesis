@@ -25,20 +25,15 @@ Since there are some videos without valutation, finalize the dataset by only kee
 * *There were some valutation of unexistent videos. I removed from some files in `targets_data/` the rows about those non existent videos by hand (1 row from `010 FT DX 5.1.csv`, 1 row from `009 QC DX 1.1.csv` and `010 FT DX 1.2.csv` file)*
 
 ## 2. Data visualization
-Using `target_data_extractor.py` we can visualize the data extracted.
+Using `extracted_data_reader.py` we can visualize the data extracted.
 * Visualize improvement of a patient in the same repetition between the sessions. In the upper plots we can see X and Y values of the first session, in the bottom plots the X and Y values of the second session. The image example shows the improvement in the first exercise, anterior elevation, and we can clearly see how wrists and elbows go much higher in the second session.  
     <p style="align:center">
     <img src="images/improv.png">
     </p>
-* Visualize the frame number adjustment. In the upper plots we can see the original X and Y values of the original video, in the bottom plots we can see the adjusted X and Y values of the adjusted video
-    * Frames number decreased to 156
-        <p style="align:center">
-        <img src="images/ex1-decrease.png">
-        </p>
-    * Frames number increased to 156
-        <p style="align:center">
-        <img src="images/ex1-increase.png">
-        </p>
+* Visualize the frame number adjustment. In the upper plots we can see the original X and Y values of the original video, in the following plots we can see the adjusted X and Y values of the adjusted video for the fixed frame number (mean, max and min of all the videos for the fixed exercise)
+    <p style="align:center">
+    <img src="images/ex1-adjust.png">
+    </p>
 
 ## 3. Model training
 
