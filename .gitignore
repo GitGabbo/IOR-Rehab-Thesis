@@ -1,6 +1,7 @@
-videos/*
-videos_data/*
-targets_data/*
+videos
+videos_data
+targets_data
 scores.xlsx
-.ipynb_checkpoints/*
-__pycache__/*
+.ipynb_checkpoints
+__pycache__
+models/tmp*
