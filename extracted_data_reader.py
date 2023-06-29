@@ -182,12 +182,12 @@ def adjust_videos_frame_number(data, frame_number):
         else:
             adjusted_data.append(video)
 
-    print(len(adjusted_data))
     return adjusted_data
 
-def read_data_ex(ex_number, frame_number=""):
+def read_data_ex(ex_number, frame_number="", test=False):
     # csv directory
     directory = f"final_video_data/ex{ex_number}/"
+    if test: directory = f"test_data/ex{ex_number}/"
     data = []
     # for each video
     for file in os.listdir(directory):
@@ -203,25 +203,20 @@ def read_data_ex(ex_number, frame_number=""):
         # append video data
         data.append(video_data)
 
+    lengths = np.array([])
+    for i, video in enumerate(data):
+        lengths = np.append(lengths, len(video[0]))
+
     if frame_number == "mean":
         # mean
-        lengths = np.array([])
-        for video in data:
-            lengths = np.append(lengths, len(video[0]))
         mean = int(np.mean(lengths))
         return adjust_videos_frame_number(data, mean)
     elif frame_number == "max":
         # max
-        lengths = np.array([])
-        for video in data:
-            lengths = np.append(lengths, len(video[0]))
         max = int(np.max(lengths))
         return adjust_videos_frame_number(data, max)
     elif frame_number == "min":
         # min
-        lengths = np.array([])
-        for video in data:
-            lengths = np.append(lengths, len(video[0]))
         min = int(np.min(lengths))
         return adjust_videos_frame_number(data, min)
     elif frame_number == "":
@@ -243,7 +238,6 @@ def read_target_ex(ex_number):
             # for each line create a list of float numbers 
             for x in file_lines:
                 data.append([ int(y) for y in x.split(",") ])
-    print(len(data))
     return data
 
 if __name__ == "__main__":

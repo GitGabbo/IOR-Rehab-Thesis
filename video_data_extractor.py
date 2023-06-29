@@ -38,11 +38,15 @@ def add_points(results, img, view_videos_flag):
                 joints_positions[joint_index*2+1].append(1 - lm.y)
 
 # export data in csv format
-def export_data(file_name, ex_number):
+def export_data(file_name, ex_number, test=False):
     global joints_positions
 
     file_name = file_name.replace(".mp4", ".csv")
-    output_file = f'videos_data/ex{ex_number}/{file_name}'
+    output_file = f"videos_data/ex{ex_number}/{file_name}"
+
+    if test: 
+        file_name = file_name.replace(".mov", ".csv")
+        output_file = f"target_data/ex{ex_number}/{file_name}"
 
     # open output file
     with open(output_file, "w") as f:
@@ -69,7 +73,7 @@ def export_data(file_name, ex_number):
                         f.write(f"{str(joint[frame])},")
 
 # extract data from one exercise
-def extract_data_ex(ex_number, view_videos_flag):
+def extract_data_ex(ex_number, view_videos_flag, test=False):
     global joints_positions
     global JOINTS
 
@@ -79,6 +83,7 @@ def extract_data_ex(ex_number, view_videos_flag):
 
     # videos directory
     directory = f"videos/es{ex_number}/"
+    if test: directory = f"test_data/ex{ex_number}/"
 
     # for each video
     for file in os.listdir(directory):
@@ -119,7 +124,7 @@ def extract_data_ex(ex_number, view_videos_flag):
                 cv2.imshow(f"{f}", img)
                 cv2.waitKey(1)
 
-        export_data(file, ex_number)
+        export_data(file, ex_number, test)
 
         cap.release()
         cv2.destroyAllWindows()
@@ -133,6 +138,10 @@ if __name__ == "__main__":
         # get exercise number
         ex_number = int(sys.argv[1])
         extract_data_ex(ex_number=ex_number, view_videos_flag=view_videos_flag)
+    elif len(sys.argv) == 3 and sys.arv[1] == "test":
+        # get exercise number
+        ex_number = int(sys.argv[2])
+        extract_data_ex(ex_number=ex_number, view_videos_flag=view_videos_flag, test=True)
     else :
         for i in range(1,6):
            extract_data_ex(ex_number=i, view_videos_flag=view_videos_flag) 
