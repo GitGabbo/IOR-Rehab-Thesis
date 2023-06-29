@@ -35,7 +35,7 @@ Using `extracted_data_reader.py` we can visualize the data extracted.
     <img src="images/ex1-adjust.png">
     </p>
 
-## 3. Model training
+## 3. Modelling
 
 
 ## Libraries used
@@ -44,3 +44,4 @@ Using `extracted_data_reader.py` we can visualize the data extracted.
 * [Pandas](https://pandas.pydata.org/)
 * [Matplotlib](https://matplotlib.org/stable/index.html)
 * [Mediapipe](https://pypi.org/project/mediapipe/)
+* [TimeseriesAI](https://timeseriesai.github.io/tsai/)

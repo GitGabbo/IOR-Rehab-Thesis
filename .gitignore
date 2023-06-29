@@ -1,6 +1,13 @@
 videos
+test_videos
 videos_data
 targets_data
+models
+models_export/ex1/dls
+models_export/ex2/dls
+models_export/ex3/dls
+models_export/ex4/dls
+models_export/ex5/dls
 scores.xlsx
 .ipynb_checkpoints
 __pycache__
