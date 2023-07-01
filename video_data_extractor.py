@@ -46,7 +46,7 @@ def export_data(file_name, ex_number, test=False):
 
     if test: 
         file_name = file_name.replace(".mov", ".csv")
-        output_file = f"target_data/ex{ex_number}/{file_name}"
+        output_file = f"test_data/ex{ex_number}/{file_name}"
 
     # open output file
     with open(output_file, "w") as f:
@@ -82,8 +82,8 @@ def extract_data_ex(ex_number, view_videos_flag, test=False):
     pose = mpPose.Pose()
 
     # videos directory
-    directory = f"videos/es{ex_number}/"
-    if test: directory = f"test_data/ex{ex_number}/"
+    directory = f"videos/ex{ex_number}/"
+    if test: directory = f"test_videos/ex{ex_number}/"
 
     # for each video
     for file in os.listdir(directory):
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         # get exercise number
         ex_number = int(sys.argv[1])
         extract_data_ex(ex_number=ex_number, view_videos_flag=view_videos_flag)
-    elif len(sys.argv) == 3 and sys.arv[1] == "test":
+    elif len(sys.argv) == 3 and sys.argv[1] == "test":
         # get exercise number
         ex_number = int(sys.argv[2])
         extract_data_ex(ex_number=ex_number, view_videos_flag=view_videos_flag, test=True)
