@@ -48,7 +48,7 @@ def train(ex_number, batch_size=[32, 64, 128], epochs_number=20, find_best_lr=Fa
         if verbose: print(f"End fit\nTime elapsed: {end} s")
 
         # save learner
-        learn.export(f"models_without_tab/ex{ex_number}_{frame_number}.pkl")
+        learn.export(f"models/ex{ex_number}_{frame_number}.pkl")
         if verbose: print(f"Saved model")
 
         learn.recorder.plot_metrics(figname=f"{image_base_name}_metrics.png")

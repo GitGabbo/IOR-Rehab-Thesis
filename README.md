@@ -11,7 +11,7 @@ The aim of the project is to develop a multimodal neural network able to automat
 ### 1.1. Video extractor
 I used mediapipe python library inside `video_data_extractor.py` to extract the coordinates of 9 joints for each frame of every video. Then I exported the keypoints in `.csv` format inside `videos_data`. The joints are: nose (head), shoulder (left and right), elbow (left and right), wrist (left and right) and waist (left and right).
 
-<img src="images/tracker.png">
+<img src="images/tracked_keypoints.png">
 
 ### 1.2. Fix a number of frames for each video
 Since I will be using timeseriesai, I will need to provide the input in a 3-dimensional array composed by [video samples][features][time sequences]. In order to have a 3D array I will need to have the same time sequences for each video, but they have different durations. I implemented a function that is able to "increase" or "decrease" the frames number creating or deleting frames data.
@@ -27,7 +27,7 @@ Since there are some videos without valutation, finalize the dataset by only kee
 * *There were some valutation of unexistent videos. I removed from some files in `targets_data/` the rows about those non existent videos by hand (1 row from `010 FT DX 5.1.csv`, 1 row from `009 QC DX 1.1.csv` and `010 FT DX 1.2.csv` file)*
 
 ### 1.5. Demographic Data
-In order to have data with the same size, use `tabdata_score_merger.py`
+In order to have data with the same size, use `tabdata_score_merger.py` to generate a new `.csv` file (inside `final_tab_data` folder) containing the same demographic data for each repetition of each session for every patient. The script will also append to each row the scores relative to the particular repetion.
 
 ## 2. Time Series data visualization
 Using `extracted_data_reader.py` we can visualize the data extracted.
@@ -43,7 +43,7 @@ Using `extracted_data_reader.py` we can visualize the data extracted.
 ## 3. Modelling
 For modelling and training I used [TimeseriesAI](https://timeseriesai.github.io/tsai/) library.
 ### 3.1. TimeSeries Model
-The model used to handle time series data is the library's implementation of [InceptionTime](https://link.springer.com/article/10.1007/s10618-020-00710-y). 
+The model used to handle time series data is the library's implementation of [InceptionTime](https://link.springer.com/article/10.1007/s10618-020-00710-y). In order to train and test the model I created and used the `models_trainer.ipynb` notebook.
 ### 3.2. Multimodal Model
 The model used to handle the multimodality is the TabModel. The steps are:
 1. Get the demographic dataframe
