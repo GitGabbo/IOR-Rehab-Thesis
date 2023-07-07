@@ -8,6 +8,14 @@ LABELS = ['HeadX', 'HeadY', 'ShoulderLX', 'ShoulderLY', 'ShoulderRX', 'ShoulderR
             'ElbowLY', 'ElbowRX', 'ElbowRY', 'WristLX', 'WristLY', 'WristRX', 'WristRY', 'WaistLX', 
             'WaistLY', 'WaistRX', 'WaistRY']
 
+# frame numbers calculated after analysis
+# if videos in train are added this values would change
+FRAMES_NUMBERS = { 'ex1': {'mean': 164, 'max': 380, 'min': 53 },
+                    'ex2': {'mean': 145, 'max': 319, 'min': 40 },
+                    'ex3': {'mean': 102, 'max': 219, 'min': 30 },
+                    'ex4': {'mean': 122, 'max': 223, 'min': 55 },
+                    'ex5': {'mean': 270, 'max': 584, 'min': 68 }}
+
 # visualize video data
 def visualize_video_data(data, video_name):
     global LABELS
@@ -142,7 +150,7 @@ def increase_frame_number(video_data, frame_number):
         for j in range(len(video_data)):
             adjusted_video_data[j].pop()
 
-    return adjusted_video_data
+    return np.array(adjusted_video_data)
 
 def decrease_frame_number(video_data, frame_number):
     ratio = len(video_data[0])/frame_number
@@ -170,7 +178,7 @@ def decrease_frame_number(video_data, frame_number):
         for j in range(len(video_data)):
             adjusted_video_data[j].pop()
 
-    return adjusted_video_data
+    return np.array(adjusted_video_data)
 
 def adjust_videos_frame_number(data, frame_number):
     adjusted_data = []
@@ -180,7 +188,7 @@ def adjust_videos_frame_number(data, frame_number):
         elif(len(video[0]) < frame_number):
             adjusted_data.append(increase_frame_number(video, frame_number))
         else:
-            adjusted_data.append(video)
+            adjusted_data.append(np.array(video))
 
     return adjusted_data
 
@@ -204,20 +212,23 @@ def read_data_ex(ex_number, frame_number="", test=False):
         data.append(video_data)
 
     lengths = np.array([])
-    for i, video in enumerate(data):
+    for video in data:
         lengths = np.append(lengths, len(video[0]))
 
     if frame_number == "mean":
         # mean
         mean = int(np.mean(lengths))
+        if test: mean = FRAMES_NUMBERS[f"ex{ex_number}"][frame_number]
         return adjust_videos_frame_number(data, mean)
     elif frame_number == "max":
         # max
         max = int(np.max(lengths))
+        if test: max = FRAMES_NUMBERS[f"ex{ex_number}"][frame_number]
         return adjust_videos_frame_number(data, max)
     elif frame_number == "min":
         # min
         min = int(np.min(lengths))
+        if test: min = FRAMES_NUMBERS[f"ex{ex_number}"][frame_number]
         return adjust_videos_frame_number(data, min)
     elif frame_number == "":
         return data
