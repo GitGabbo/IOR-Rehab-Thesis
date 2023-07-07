@@ -1,0 +1,15 @@
+id,age,height,weight,bmi,gender,dominant_side,surgery,profession,sport 
+001SJ,35,182,91,27.5,M,,Capsuloplastica spalla dx,,
+002DL,52,172,77.5,26.2,M,,Capsuloplastica spalla sn,,
+003GN,59,164,65,24.2,M,,Capsuloplastica spalla dx,,
+008MF,68,160,62,24.2,F,,OS in esiti di frattura diafisi omero dx,,
+009QC,47,168,65,23.1,M,,Capsuloplastica spalla sn,,
+010FT,41,165,45,16.5,F,,OS in esiti di frattura omero prossimale dx,,
+011MD,62,180,74,22.8,M,,Esiti sutura tendine sovraspinato + tenotomia CLB dx,,
+012ML,51,173,95,31.7,F,,OS in esiti di frattura omero prox sn,,
+013LP,68,178,102,32.2,M,,Capsuloplastica + tenotomia CLB spalla sn,,
+028BA,64,174,77,25.4,M,,Ricostruzione tendine sovraspinato e CLB dx,,
+029DG,57,158,60,24,F,,Rimozione mezzi di sintesi in OS in esiti di frattura omero prox sn,,
+030MG,73,160,84,32.8,F,,Revisione protesi inversa spalla sn,,
+031CM,80,157,63,25.6,F,,Protesi inversa spalla dx,,
+032GT,71,170,70,24.2,M,,Capsuloplastica spalla dx,,Si
