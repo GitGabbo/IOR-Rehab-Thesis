@@ -11,9 +11,7 @@ The aim of the project is to develop a multimodal neural network able to automat
 ### 1.1. Video extractor
 I used mediapipe python library inside `video_data_extractor.py` to extract the coordinates of 9 joints for each frame of every video. Then I exported the keypoints in `.csv` format inside `videos_data`. The joints are: nose (head), shoulder (left and right), elbow (left and right), wrist (left and right) and waist (left and right).
 
-<div style="align:center; width=100%">
 <img src="images/tracker.png">
-</div>
 
 ### 1.2. Fix a number of frames for each video
 Since I will be using timeseriesai, I will need to provide the input in a 3-dimensional array composed by [video samples][features][time sequences]. In order to have a 3D array I will need to have the same time sequences for each video, but they have different durations. I implemented a function that is able to "increase" or "decrease" the frames number creating or deleting frames data.
