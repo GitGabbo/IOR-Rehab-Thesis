@@ -19,73 +19,23 @@ For all the following tables:
 
 ## 1. TimeSeries NN Performances
 
-| Exercise | Accuracy Mean                          | Accuracy Max | Accuracy Min | Time Mean (s) | Time Max (s) | Time Min (s) |
-| -------- | -------------------------------------- | ------------ | ------------ | ------------- | ------------ | ------------ |
-| 1        |                                        |              |              |               |              |              |
-| 2        |                                        |              |              |               |              |              |
-| 3        | <span style="color:#f77">0.9928</span> | 0.9880       | 0.9904       | 19791         | 40657        | 10381        |
-| 4        |                                        |              |              |               |              |              |
-| 5        |                                        |              |              |               |              |              |
-
-<details>
-    <summary>Old wrong times (keeping them just in case)</summary>
-
-## WRONG TimeSeries NN Performances
-
-| Exercise | Accuracy Mean                            | Accuracy Max                             | Accuracy Min                             | Time Mean (s) | Time Max (s) | Time Min (s) |
-| -------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ------------- | ------------ | ------------ |
-| 1        | 0.978166                                 | <span style="color:#f77">0.981659</span> | 0.973799                                 | 153           | 375          | 58           |
-| 2        | 0.955085                                 | <span style="color:#f77">0.961017</span> | 0.953390                                 | 147           | 303          | 38           |
-| 3        | <span style="color:#f77">0.968000</span> | 0.967200                                 | 0.956800                                 | 97            | 216          | 34           |
-| 4        | 0.965975                                 | 0.964315                                 | <span style="color:#f77">0.967635</span> | 116           | 212          | 55           |
-| 5        | 0.978704                                 | 0.980556                                 | <span style="color:#f77">0.981481</span> | 205           | 478          | 63           |
-
-</details>
-
-<details>
-    <summary>Old perf</summary>
-
-1. Videos Neural Network separeted performances
-
-| Exercise | Target   | Accuracy Mean | Accuracy Max | Accuracy Min |
-| -------- | -------- | ------------- | ------------ | ------------ |
-| 1        | Goal     | 0.931709      | 0.921397     | 0.960699     |
-| 1        | Width    |               |              |              |
-| 1        | Head     |               |              |              |
-| 1        | Shoulder |               |              |              |
-| 1        | Trunk    |               |              |              |
-| 2        | Goal     | 0.915254      | 0.911017     | 0.919492     |
-| 2        | Width    | 0.889831      | 0.906780     | 0.923729     |
-| 2        | Head     | 0.915254      | 0.911017     | 0.923729     |
-| 2        | Shoulder | 0.881356      | 0.885593     | 0.906780     |
-| 2        | Trunk    | 0.932203      | 0.936491     | 0.944915     |
-| 3        | Goal     | 0.924000      | 0.920000     | 0.920000     |
-| 3        | Width    | 0.912000      | 0.916000     | 0.912000     |
-| 3        | Head     | 0.976000      | 0.980000     | 0.980000     |
-| 3        | Shoulder | 0.976000      | 0.972000     | 0.976000     |
-| 3        | Trunk    | 0.944000      | 0.944000     | 0.948000     |
-| 4        | Goal     |               |              |              |
-| 4        | Width    |               |              |              |
-| 4        | Head     |               |              |              |
-| 4        | Shoulder |               |              |              |
-| 4        | Trunk    |               |              |              |
-| 5        | Goal     |               |              |              |
-| 5        | Width    | 0.925926      |              |              |
-| 5        | Head     |               |              |              |
-| 5        | Shoulder |               |              |              |
-| 5        | Trunk    |               |              |              |
-
-</details>
+| Exercise | Accuracy Mean                          | Accuracy Max                           | Accuracy Min                           | Time Mean (s) | Time Max (s)   | Time Min (s)  |
+| -------- | -------------------------------------- | -------------------------------------- | -------------------------------------- | ------------- | -------------- | ------------- |
+| 1        | 0.9737                                 | 0.9677                                 | <span style="color:#f77">0.9799</span> | 24483 (6.80h) | 54939 (15.26h) | 8993 (2.50h)  |
+| 2        | 0.9864                                 | <span style="color:#f77">0.9881</span> | 0.9847                                 | 22527 (6.26h) | 46028 (12.79h) | 7053 (1.96h)  |
+| 3        | <span style="color:#f77">0.9928</span> | 0.9880                                 | 0.9904                                 | 19791 (5.50h) | 40657 (11.29h) | 10381 (2.88h) |
+| 4        | 0.9917                                 | <span style="color:#f77">0.9942</span> | <span style="color:#f77">0.9942</span> | 19141 (5.32h) | 33295 (9.25h)  | 9497 (2.64h)  |
+| 5        | <span style="color:#f77">0.9907</span> | 0.9889                                 | 0.9898                                 | 31027 (8.62h) | 63427 (17.62h) | 9480 (2.63h)  |
 
 ## 2. Multimodal NN Performances
 
-| Exercise | Avg Accuracy Mean                      | Avg Accuracy Max                       | Avg Accuracy Min | Time Mean (s) | Time Max(s) | Time min (s) |
-| -------- | -------------------------------------- | -------------------------------------- | ---------------- | ------------- | ----------- | ------------ |
-| 1        | 0.9914                                 | <span style="color:#f77">0.9922</span> | 0.9914           | 3170          | 3100        | 2916         |
-| 2        | <span style="color:#f77">0.9858</span> | 0.9848                                 | 0.9849           | 3027          | 2975        | 2605         |
-| 3        | <span style="color:#f77">0.9904</span> | 0.9888                                 | 0.9800           | 4208          | 3897        | 4075         |
-| 4        | 0.9892                                 | <span style="color:#f77">0.9918</span> | 0.9902           | 2880          | 2973        | 2829         |
-| 5        | <span style="color:#f77">0.9898</span> | 0.9880                                 | 0.9890           | 2639          | 3218        | 2918         |
+| Exercise | Avg Accuracy Mean                      | Avg Accuracy Max                       | Avg Accuracy Min | Time Mean (s) | Time Max (s)  | Time min (s)  |
+| -------- | -------------------------------------- | -------------------------------------- | ---------------- | ------------- | ------------- | ------------- |
+| 1        | 0.9914                                 | <span style="color:#f77">0.9922</span> | 0.9914           | 3170 (52.83m) | 3100 (51.67m) | 2916 (48.60m) |
+| 2        | <span style="color:#f77">0.9858</span> | 0.9848                                 | 0.9849           | 3027 (50.45m) | 2975 (49.58m) | 2605 (43.42m) |
+| 3        | <span style="color:#f77">0.9904</span> | 0.9888                                 | 0.9800           | 4208 (70.13m) | 3897 (64.95m) | 4075 (67.92m) |
+| 4        | 0.9892                                 | <span style="color:#f77">0.9918</span> | 0.9902           | 2880 (48.00m) | 2973 (49.55m) | 2829 (47.15m) |
+| 5        | <span style="color:#f77">0.9898</span> | 0.9880                                 | 0.9890           | 2639 (43.98m) | 3218 (53.63m) | 2918 (48.63m) |
 
 <details>
     <summary>All performances metrics</summary>
